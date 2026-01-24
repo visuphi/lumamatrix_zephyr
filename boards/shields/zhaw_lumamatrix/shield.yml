@@ -10,3 +10,4 @@ shield:
     - sensor
     - led_strip
     - display
+    - input
