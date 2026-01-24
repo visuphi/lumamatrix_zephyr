@@ -11,7 +11,7 @@ which Adafruit refers to as “neopixels”.
 There is a joystick and a switch on the backside.
 The shield id designed to be compatible with Raspberry Pi Pico
 
-.. figure:: phot
+.. figure:: zhaw_lumamatrix.png
    :align: center
    :alt: ZHAW Luma Matrix Shield
 
