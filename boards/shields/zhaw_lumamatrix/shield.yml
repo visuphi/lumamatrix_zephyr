@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# Copyright (c) 2026, Institute of Embedded Systems ZHAW
+
+shield:
+  name: zhaw_lumamatrix
+  full_name: ZHAW Luma Matrix Shield
+  vendor: zhaw
+  supported_features:
+    - sensor
+    - led_strip
+    - display
