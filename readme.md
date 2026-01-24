@@ -13,3 +13,10 @@ west build -b rpi_pico --shield zhaw_lumamatrix
 - hold boot button and connect the rpi_pico to the computer. 
 - release boot button
 - copy `zephyr.uf2` from the build folder onto the rpi_pico
+
+
+## to-do's
+
+- [x] add led-strip
+- [ ] add joystick 
+- [ ] add switch
