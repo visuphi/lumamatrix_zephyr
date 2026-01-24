@@ -17,7 +17,6 @@
 		led-strips = <&bff_led_strip>;
 		width = <8>;
 		height = <8>;
-		// start-from-right;
 		circulative;
 	};
 };
