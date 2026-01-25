@@ -18,5 +18,5 @@ west build -b rpi_pico --shield zhaw_lumamatrix
 ## to-do's
 
 - [x] add led-strip
-- [ ] add joystick 
-- [ ] add switch
+- [x] add joystick 
+- [x] add switch
