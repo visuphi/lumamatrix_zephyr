@@ -7,7 +7,6 @@ shield:
   full_name: ZHAW Luma Matrix Shield
   vendor: zhaw
   supported_features:
-    - sensor
     - led_strip
     - display
     - input
