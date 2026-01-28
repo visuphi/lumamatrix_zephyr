@@ -1,22 +1,14 @@
-# Zephyr for ZHAW Luma Matrix
+# Zephyr Board/Shield Files for ZHAW Luma Matrix
 
-This repository contains the shield files and the led-strip sample from zephyr.
+This repository contains the shield files for the ZHAW Luma Matrix.
 
-## build
+The files can be added as submodule in your project under `boards/shields/`
 
-```
-west build -b rpi_pico --shield zhaw_lumamatrix
-```
+## See also:
 
-## flash 
+[Luma Matrix Push the Box - Zephyr Version](https://github.com/visuphi/lumamatrix_pushthebox/)
+# Links
 
-- hold boot button and connect the rpi_pico to the computer. 
-- release boot button
-- copy `zephyr.uf2` from the build folder onto the rpi_pico
-
-
-## to-do's
-
-- [x] add led-strip
-- [x] add joystick 
-- [x] add switch
+[Lumatrix Workshop ZHAW](www.lumatrix.fun) <br>
+[Lumatrix Github Repository](https://github.com/InES-HPMM/LED-Matrix-Workshop) <br>
+[Zephyr RTOS Documentation](https://docs.zephyrproject.org/latest/)
