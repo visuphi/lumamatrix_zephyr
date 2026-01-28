@@ -1,5 +1,10 @@
 #include <map.h>
 
+int map_pos_to_index(int row, int col)
+{
+    return row * 8 + col;
+}
+
 // struct map maps[] = {
 //     {
 //         BORDER_CELL,

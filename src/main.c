@@ -166,24 +166,20 @@ static int setup_button(const struct gpio_dt_spec *btn, struct gpio_callback *cb
 	return 0;
 }
 
-static int index8x8(int row, int col)
-{
-    return row * 8 + col;
-}
-
 static int read_map(void) {
 	int rc;
 	size_t maps_len = sizeof(maps) / sizeof(maps[0]);
 	int i;
 	int index;
-	for (i=0; i <= maps_len; i++) {
-		index = index8x8(maps[i].position.x,maps[i].position.y);
+	for (i=0; i <= maps_len-1; i++) {
+		index = map_pos_to_index(maps[i].position.x,maps[i].position.y);
 		memcpy(&pixels[index], &maps[i].color, sizeof(struct led_rgb));
 	}
 	rc = led_strip_update_rgb(strip, pixels, STRIP_NUM_PIXELS);
 	if (rc) {
 		LOG_ERR("couldn't update strip: %d", rc);
 	}
+	return 0;
 }
 static int init_hw(void)
 {

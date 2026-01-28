@@ -18,3 +18,5 @@ enum name {
     TARGET_CELL,
     BOX
 };
+
+int map_pos_to_index(int row, int col);
