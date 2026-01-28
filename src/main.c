@@ -6,7 +6,7 @@
 
 #include <errno.h>
 #include <string.h>
-
+#include <map.h>
 #define LOG_LEVEL 4
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(main);
@@ -41,6 +41,50 @@ static struct gpio_callback joystick_down_cb_data;
 static struct gpio_callback joystick_left_cb_data;
 static struct gpio_callback joystick_right_cb_data;
 static struct gpio_callback joystick_center_cb_data;
+
+/* just for test purpose */
+struct map maps[] = {
+    {
+        BORDER_CELL,
+        { 0, 0 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 1, 1 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 2, 0 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 3, 0 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 4, 0 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 5, 0 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 5, 1 },
+        { 100, 100, 100 }
+    },
+        {
+        BORDER_CELL,
+        { 5, 2 },
+        { 100, 100, 100 }
+    }
+};
 
 int cursor = 0;
 static const struct led_rgb colors[] = {
@@ -122,6 +166,25 @@ static int setup_button(const struct gpio_dt_spec *btn, struct gpio_callback *cb
 	return 0;
 }
 
+static int index8x8(int row, int col)
+{
+    return row * 8 + col;
+}
+
+static int read_map(void) {
+	int rc;
+	size_t maps_len = sizeof(maps) / sizeof(maps[0]);
+	int i;
+	int index;
+	for (i=0; i <= maps_len; i++) {
+		index = index8x8(maps[i].position.x,maps[i].position.y);
+		memcpy(&pixels[index], &maps[i].color, sizeof(struct led_rgb));
+	}
+	rc = led_strip_update_rgb(strip, pixels, STRIP_NUM_PIXELS);
+	if (rc) {
+		LOG_ERR("couldn't update strip: %d", rc);
+	}
+}
 static int init_hw(void)
 {
 	if (device_is_ready(strip)) {
@@ -164,6 +227,9 @@ int main(void)
 	if (!rc) {
 		LOG_ERR("failed to init hw");
 	}
+
+	rc = read_map();
+
 
 	return 0;
 }
