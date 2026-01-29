@@ -54,3 +54,7 @@ when running the :zephyr:code-sample:`led_strip` LED-Strip sample:
    :shield: zhaw_lumamatrix
    :goals: build
 
+.. _ZHAW Lumatrix Workshop:
+   https://www.lumatrix.fun
+
+
