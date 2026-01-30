@@ -6,13 +6,12 @@ ZHAW Luma Matrix Shield
 Overview
 ********
 
-The `ZHAW Luma Matrix Shield`_ is a 8x8 grid of WS2812B RGB LEDs, 
-which Adafruit refers to as “neopixels”. 
+The `ZHAW Luma Matrix Shield`_ is a 8x8 grid of WS2812B RGB LEDs, which Adafruit refers to as “neopixels”.
 There is a joystick and a switch on the backside.
 The shield is designed to be compatible with Raspberry Pi Pico 1.
-The Luma Matrix is used in the Lumatrix Workshop of the Zurich University of Applied Sciences. 
+The Luma Matrix is used in the Lumatrix Workshop of the Zurich University of Applied Sciences.
 
-   .. figure:: zhaw_lumamatrix.webp
+.. figure:: zhaw_lumamatrix.webp
    :align: center
    :alt: ZHAW Luma Matrix Shield
 
@@ -45,16 +44,13 @@ The shield can be used with Raspbery Pi Pico 1.
 Programming
 ***********
 
-Set ``--shield zhaw_lumamatrix`` when you invoke ``west build``.  For example
-when running the :zephyr:code-sample:`led_strip` LED-Strip sample:
+LED Strip Sample
+=================
+
+Set ``--shield zhaw_lumamatrix`` when you invoke ``west build``. For example:
 
 .. zephyr-app-commands::
    :zephyr-app: samples/drivers/led/led_strip
    :board: rpi_pico
    :shield: zhaw_lumamatrix
    :goals: build
-
-.. _ZHAW Lumatrix Workshop:
-   https://www.lumatrix.fun
-
-

@@ -3,18 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
- #include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
- #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
- / {
+/ {
 	aliases {
 		sw0 = &joy_up;
-        sw1 = &joy_down;
-        sw2 = &joy_left;
-        sw3 = &joy_right;
-        sw4 = &joy_center;
-        sw5 = &switch;
-
+		sw1 = &joy_down;
+		sw2 = &joy_left;
+		sw3 = &joy_right;
+		sw4 = &joy_center;
+		sw5 = &switch;
 	};
 
 	buttons {
@@ -59,8 +58,7 @@
 	};
 };
 
-
- &pinctrl {
+&pinctrl {
 	pinctrl_bff_ws2812: pinctrl_bff_ws2812 {
 		ws2812 {
 			pinmux = <PIO0_P19>;
